@@ -4,15 +4,15 @@ import (
   "log"
   "net/http"
 )
-type Todo struct {
+type Lift struct {
   ID  string `json:"id"`
   Title string `json:"title"`
   Completed bool `json:"completed"`
 }
-var todos []Todo
+var lifts []Lift
 func main() {
   // Define routes
-  http.HandleFun("/todos", getTodos)
+  http.HandleFun("/lifts", getLifts)
   //Start the server
   log.Fatal(http.ListenAndServer(":8080"), nil)
 }
