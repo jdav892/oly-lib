@@ -1,12 +1,13 @@
-package main 
+package main
 
+
+//reorganizing repo
 import (
-  "server"
-  "routes"
-  "controllers"
-  "actions"
+	"api"
+	"cmd"
+	"handlers"
 )
 
 func main() {
-  fmt.Println("main")
+	fmt.Println("main")
 }
