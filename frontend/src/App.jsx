@@ -6,15 +6,14 @@ import Header from "./components/Header.jsx"
 import Footer from "./components/Footer.jsx"
 import Display from "./components/Display.jsx"
 
-function App()  
-  const [count, setCount] = useState(0)
+function App(){  
 
   return (
-    <main>
+    <>
       <Header />
       <Display />
       <Footer />
-    </main>
+    </>
   )
 }
 
