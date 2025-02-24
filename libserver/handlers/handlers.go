@@ -14,25 +14,28 @@ var exerciseCategories = map[string][]string{
   "general-fitness": {"Front Squat", "Strict Press", "Barbell Row"},
 }
 
-func AllExercisesHandler(w http.ResponseWriter, r *http.Request) {
+//retrieves all exercises and their categories
+func AllExercisesHandler(write http.ResponseWriter, read *http.Request) {
+  //responds with all exercies
   response := map[string]interface{}{
     "exercises": exerciseCategories,
   }
-  w.Header().Set("Content-Type", "application/json")
-  json.NewEncoder(w).Encode(response)
+  //encodes and returns as JSON 
+  write.Header().Set("Content-Type", "application/json")
+  json.NewEncoder(write).Encode(response)
 }
 
 
 //retrieves exerciese by categories
-func ExercisesByCategoryHandler(w http.ResponseWriter, r *http.Request) {
+func ExercisesByCategoryHandler(write http.ResponseWriter, read *http.Request) {
   //get the sport from url path(captured as path parameter)
-  vars := mux.Vars(r)
+  vars := mux.Vars(read)
   sport := vars["sport"]
 
   //fetch exercies from specified sport
   exercises, exists := exerciseCategories[sport]
   if !exists {
-    http.Error(w, "Sport not found", http.StatusNotFound)
+    http.Error(write, "Sport not found", http.StatusNotFound)
     return
   }
 
@@ -41,8 +44,8 @@ func ExercisesByCategoryHandler(w http.ResponseWriter, r *http.Request) {
     "sport": sport,
     "exercises": exercises,
   }
-
-  json.NewEncoder(w).Encode(response)
+  write.Header().Set("Content-Type", "application/json")
+  json.NewEncoder(write).Encode(response)
 }
 
 
