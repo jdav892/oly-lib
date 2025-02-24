@@ -6,12 +6,20 @@ import (
   "github.com/gorilla/mux"
 )
 
-//predefined exercise categories
+//predefined exercise categories as template for json repsonses, will seed pg db later
 var exerciseCategories = map[string][]string{
   "powerlifting": {"Bench Press", "Deadlift", "Back Squat"},
   "weightlifting": {"Snatch", "Clean and Jerk"},
   "strongman": {"Atlas Stone", "Axle Clean and Press", "Yoke Carry"},
-  "general exercies": {"Front Squat", "Strict Press", "Barbell Row"},
+  "general-fitness": {"Front Squat", "Strict Press", "Barbell Row"},
+}
+
+func AllExercisesHandler(w http.ResponseWriter, r *http.Request) {
+  response := map[string]interface{}{
+    "exercises": exerciseCategories,
+  }
+  w.Header().Set("Content-Type", "application/json")
+  json.NewEncoder(w).Encode(response)
 }
 
 
