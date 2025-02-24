@@ -1,11 +1,11 @@
-package api
+package api 
 
-import (
-	"fmt"
-	"log"
-	"net/http"
+import(
+  "fmt"
+  "log"
+  "net/http"
 )
 
 func main() {
-	fmt.Println("Starting point")
+  fmt.Println("Layout do over")
 }

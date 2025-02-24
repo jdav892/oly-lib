@@ -1,11 +1,11 @@
 package handlers 
 
 import (
-	"fmt"
-	"log"
-	"net/http"
+  "log"
+  "net/http"
+  "time"
 )
 
 func main() {
-	fmt.Println("Handler start")
+  fmt.Println("Layout start")
 }
