@@ -1,22 +1,19 @@
 package main
 
-
 //reorganizing repo
 import (
-	"api"
-	"cmd"
-	"handlers"
+  "fmt"
+  "log"
   "github.com/gofiber/fiber/v2"
 )
 
 func main() {
-	fmt.Println("main")
-
+	fmt.Println("Server Running")
   app := fiber.New()
 
   app.Get("/", func(c *fiber.Ctx) error {
     return c.Status(200).JSON(fiber.Map{"msg": "Valid"})
   })
 
-  log.Fatal(app.listen(":8080"))
+  log.Fatal(app.Listen(":8080"))
 }
