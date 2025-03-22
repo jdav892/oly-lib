@@ -17,7 +17,7 @@ var exerciseCategories = map[string][]string{
 
 //retrieves all exercises and their categories
 func AllExercisesHandler(write http.ResponseWriter, read *http.Request) {
-  //responds with all exercies
+  //responds with all exercises
   response := map[string]interface{}{
     "exercises": exerciseCategories,
   }
@@ -33,7 +33,7 @@ func ExercisesByCategoryHandler(write http.ResponseWriter, read *http.Request) {
   vars := mux.Vars(read)
   sport := vars["sport"]
 
-  //fetch exercies from specified sport
+  //fetch exercises from specified sport
   exercises, exists := exerciseCategories[sport]
   if !exists {
     http.Error(write, "Sport not found", http.StatusNotFound)
