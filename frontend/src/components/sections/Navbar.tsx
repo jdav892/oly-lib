@@ -4,24 +4,30 @@ type Props = {}
 
 const Navbar = (props: Props) => {
   return (
-    <nav className="text-white">
+    <nav>
       <h2 className="text-xl">Modalities</h2>
+      <div className="grid grid-cols-4">
+      <div>
       <button
-        title="Competition"
-        className="rounded-md"
-      />
+        className="border-solid rounded-md"
+      >Competition</button>
+      </div>
+      <div>
       <button 
-        title="Strength"
         className="rounded-md"
-      />
+      >Strength</button>
+      </div>
+      <div>
       <button
-        title="Plyometrics"
         className="rounded-md"
-      />
+      >Plyometrics</button>
+      </div>
+      <div>
       <button
-        title="Accessory"
         className="rounded-md"
-      />
+      >Accessories</button>
+      </div>
+      </div>
     </nav>
   )
 }

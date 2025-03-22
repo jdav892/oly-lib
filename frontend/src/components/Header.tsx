@@ -5,7 +5,7 @@ type Props = {}
 
 const Header = (props: Props) => {
   return (
-  <header className="bg-black text-2xl text-white">
+  <header className="text-2xl">
     <h1>Weightlifting Library</h1>
     <Navbar />
   </header>
