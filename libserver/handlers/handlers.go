@@ -12,6 +12,7 @@ var exerciseCategories = map[string][]string{
   "weightlifting": {"Snatch", "Clean and Jerk"},
   "strongman": {"Atlas Stone", "Axle Clean and Press", "Yoke Carry"},
   "general-fitness": {"Front Squat", "Strict Press", "Barbell Row"},
+  "plyometrics": {"Box Jump", "Broad Jump", "Hurdles"},
 }
 
 //retrieves all exercises and their categories
