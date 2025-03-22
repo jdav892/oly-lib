@@ -7,7 +7,7 @@ const Header = (props: Props) => {
   return (
   <header className="text-2xl">
     <h1>Weightlifting Library</h1>
-    <Navbar />
+      <Navbar />
   </header>
   )
 }
