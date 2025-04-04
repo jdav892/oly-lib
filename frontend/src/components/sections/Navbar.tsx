@@ -4,7 +4,7 @@ type Props = {}
 
 const Navbar = (props: Props) => {
   return (
-    <nav>
+    <nav className="items-center justify-center">
       <h2 className="text-xl">Modalities</h2>
       <div className="grid grid-cols-4">
           <div>

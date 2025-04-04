@@ -5,8 +5,8 @@ type Props = {}
 
 const Header = (props: Props) => {
   return (
-  <header className="text-2xl">
-    <h1>Weightlifting Library</h1>
+  <header>
+    <h1  className="flex items-center justify-center">Weightlifting Library</h1>
       <Navbar />
   </header>
   )
