@@ -10,7 +10,6 @@ import (
 var exerciseCategories = map[string][]string{
   "powerlifting": {"Bench Press", "Deadlift", "Back Squat"},
   "weightlifting": {"Snatch", "Clean and Jerk"},
-  "strongman": {"Atlas Stone", "Axle Clean and Press", "Yoke Carry"},
   "general-fitness": {"Front Squat", "Strict Press", "Barbell Row"},
   "plyometrics": {"Box Jump", "Broad Jump", "Hurdles"},
 }
