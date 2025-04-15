@@ -6,7 +6,9 @@ type Props = {
 {/*Needs to be reusable*/}
 function ({ title }: Props) {
   return (
-  <button>{title}</button>
+    <button className="rounded-md bg-black text-white">
+      {title}
+    </button>
   )
 }
 

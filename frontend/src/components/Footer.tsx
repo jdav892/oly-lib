@@ -4,6 +4,7 @@ type Props = {}
 
 const Footer = (props: Props) => {
   return (
+    {/* Need to decide if this will be my own or a template */}
     <footer>
       <nav>
         <ul>
