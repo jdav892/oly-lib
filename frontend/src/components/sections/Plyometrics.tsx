@@ -4,7 +4,7 @@ type Props = {}
 
 const Plyometrics = (props: Props) => {
   return (
-    <div>Plyometrics</div>
+    <section>Plyometrics</section>
   )
 }
 

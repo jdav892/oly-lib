@@ -4,7 +4,7 @@ type Props = {}
 
 const Weightlifting = (props: Props) => {
   return (
-    <div>Weightlifting</div>
+    <section>Weightlifting</section>
   )
 }
 

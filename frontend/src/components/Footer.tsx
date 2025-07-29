@@ -4,13 +4,18 @@ type Props = {}
 
 const Footer = (props: Props) => {
   return (
-    {/* Need to decide if this will be my own or a template */}
     <footer>
       <nav>
         <ul>
-          <li>Contact info</li>
-          <li>Socials</li>
-          <li>Affiliates</li>
+          <li>
+            <div>Contact info</div>
+          </li>
+          <li>
+            <div>Socials</div>
+          </li>
+          <li>
+            <div>Affiliates</div>
+          </li>
         </ul>
       </nav>
     </footer>
