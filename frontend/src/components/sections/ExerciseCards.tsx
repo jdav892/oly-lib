@@ -9,7 +9,13 @@ const ExerciseCards: React.FC = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:8080/lib/exercises")
+        fetch("http://localhost:8080/lib/exercises", {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+        })
           .then((res) => res.json())
           .then((data) => {
             setExercisesBySport(data.exercises);

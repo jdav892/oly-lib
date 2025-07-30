@@ -1,20 +1,31 @@
-import { useState } from 'react';
+import  React, { useState } from 'react';
 import './App.css';
-import Header from "./components/Header.tsx";
-import Footer from "./components/Footer.tsx";
-import Body from "./components/Body.tsx";
+import ExerciseCards from './components/sections/ExerciseCards';
+import ExerciseAccordion from './components/sections/ExerciseAccordion';
 
-
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () =>  {
+  const [view, setView] = useState<'cards' | 'accordion'>('cards');
 
   return (
-    <>
-      <Header />
-      <Body />
-      <Footer />
-   </>
-  )
-}
+    <div className="min-h-screen bg-gray-50">
+      <div className="flex justify-center mt-4">
+        <button
+          onClick={() => setView('cards')}
+          className={`mx px-4 py-2 rounded ${view === 'cards' ? 'bg-blue-600 text-white' : 'bg-white border'
+            }`} 
+        >
+          Card View
+        </button>
+        <button
+         onClick={() => setView('accordion')}
+         className={`mx-2 px-4 py-2 rounded ${view === 'accordion' ? 'bg-blue-600 text-white' : 'bg-white border'}`} 
+        >
+          Accordion View
+        </button>
+      </div>
+      {view === 'cards' ? <ExerciseCards/> : <ExerciseAccordion/>}
+    </div>
+  );
+};
 
-export default App
+export default App;
