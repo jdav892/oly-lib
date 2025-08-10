@@ -1,17 +1,16 @@
 package routes
 
 import (
-  "libserver/handlers"
-  "github.com/gorilla/mux"
+	"libserver/handlers"
+
+	"github.com/gorilla/mux"
 )
 
-//RegisterRoutes to set up API routes
+// RegisterRoutes to set up API routes
 func RegisterRoutes() *mux.Router {
-  response := mux.NewRouter().StrictSlash(true) //Enable StrictSlash
+	response := mux.NewRouter().StrictSlash(true)
 
-  //defining the routes with path params
 	response.HandleFunc("/lib/exercises", handlers.AllExercisesHandler).Methods("GET", "OPTIONS")
 
-  return response
+	return response
 }
-

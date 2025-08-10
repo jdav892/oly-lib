@@ -1,13 +1,14 @@
-package main 
+package main
 
 import (
-  "fmt"
-  "log"
-  "net/http"
-	
-	"github.com/rs/cors"
+	"fmt"
+	"log"
+	"net/http"
+
 	"libserver/middleware"
-  "libserver/routes"
+	"libserver/routes"
+
+	"github.com/rs/cors"
 )
 
 func main() {
@@ -16,13 +17,14 @@ func main() {
 	router := routes.RegisterRoutes()
 	handler := middleware.JSONMiddleware(router)
 
+	//probably going to add more to this
 	corsHandler := cors.New(cors.Options{
-		AllowedOrigins: []string{"http://localhost:5173"},
+		AllowedOrigins:   []string{"http://localhost:5173"},
 		AllowCredentials: true,
-		AllowedMethods: []string{"GET", "POST", "OPTIONS"},
-		AllowedHeaders: []string{"Content-Type"},
+		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
+		AllowedHeaders:   []string{"Content-Type"},
 	}).Handler(handler)
 
-  fmt.Println("Server running on localhost" + port)
-  log.Fatal(http.ListenAndServe(port, corsHandler))
+	fmt.Println("Server running on localhost" + port)
+	log.Fatal(http.ListenAndServe(port, corsHandler))
 }
